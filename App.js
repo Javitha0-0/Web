@@ -1,13 +1,8 @@
-<html>
-<head>
-<title>H.M.V.
-</title>
+
  import React, { useState, useEffect } from 'react';
 import { AlertCircle, Mail, Phone, MapPin, Camera, Menu, X, Shield, ChevronRight, Star, Trophy, Book, Users, Calendar } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 
-</head>
-<body>
 Prevent right-click
   useEffect(() => {
     const handleContextMenu = (e) => {
@@ -153,5 +148,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-</body>
-</html>
