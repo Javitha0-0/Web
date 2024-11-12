@@ -1,6 +1,40 @@
-import React, { useState, useEffect } from 'react';
+<html>
+<head>
+<title>H.M.V.
+</title>
+ import React, { useState, useEffect } from 'react';
 import { AlertCircle, Mail, Phone, MapPin, Camera, Menu, X, Shield, ChevronRight, Star, Trophy, Book, Users, Calendar } from 'lucide-react';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+
+</head>
+<body>
+Prevent right-click
+  useEffect(() => {
+    const handleContextMenu = (e) => {
+      e.preventDefault();
+    };
+    document.addEventListener('contextmenu', handleContextMenu);
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+    };
+  }, []);
+
+  // Disable developer tools shortcuts
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (
+        (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+        (e.ctrlKey && e.shiftKey && e.key === 'J') ||
+        (e.key === 'F12')
+      ) {
+        e.preventDefault();
+      }
+    };
+    document.addEventListener('keydown', handleKeyPress);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+  }, []);
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -119,3 +153,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+</body>
+</html>
